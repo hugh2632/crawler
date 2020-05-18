@@ -7,6 +7,7 @@ import (
 
 //并发测试，此处不适用benchmark测试
 func TestTab_Navigate(t *testing.T) {
+	ClearCache()
 	//不使用无头模式
 	Crawler_Headless = false
 	//并行数量
@@ -137,7 +138,7 @@ func TestTab_GetAllLinks(t *testing.T) {
 }
 
 func TestSimpleGet(t *testing.T) {
-	res, tp, er := SimpleGet("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/css/soutu_new2_6b217a0.css")
+	res, tp, er := SimpleGet("http://www.siwimes.com/hydra_ui/assets/font/fontawesome-webfont.ttf?v=3.2.1")
 	if er != nil {
 		t.Fatal(er.Error())
 	}

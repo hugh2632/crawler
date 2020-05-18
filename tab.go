@@ -203,7 +203,7 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 							doc.Port = int(resp.RemotePort) //网站端口
 							doc.RespUrl = resp.URL
 							if resp.Timing != nil {
-								doc.DnsTime = int((resp.Timing.DNSEnd - resp.Timing.DNSStart) * 1000)
+								doc.DnsTime = int(resp.Timing.DNSEnd - resp.Timing.DNSStart)
 								doc.ResponseTime = int(resp.Timing.ReceiveHeadersEnd)
 							}
 						} else {
