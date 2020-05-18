@@ -144,6 +144,9 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 	var res sync.Map
 
 	var start = time.Now()
+	//计算加载时长
+	defer func() {doc.LoadTime = int(time.Since(start).Milliseconds())}()
+
 	if self.LoadTimeOut == 0 {
 		self.LoadTimeOut = Crawler_LoadTimeOut
 	}
@@ -261,8 +264,6 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 			self.WaitTime = Crawler_WaitTime
 		}
 		time.Sleep(time.Duration(self.WaitTime) * time.Millisecond)
-		//计算加载时长
-		doc.LoadTime = int(time.Since(start).Milliseconds())
 	}
 
 	//为资源赋值responsebody
