@@ -29,8 +29,8 @@ type resourceMap struct {
 }
 
 type Resource struct {
-	Type      network.ResourceType
-	Value     []byte
+	Type  network.ResourceType
+	Value []byte
 }
 
 type resourceParams struct {

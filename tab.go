@@ -275,11 +275,14 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 				newval.Value = body
 			}
 			if newval.Value == nil || len(newval.Value) == 0 {
-				bs, er := SimpleGet(key.(string))
+				bs, tp, er := SimpleGet(key.(string))
 				if er != nil {
 					log.Println(key.(string), "资源错误: ", er.Error())
 				} else {
 					newval.Value = bs
+					if len(tp) > 0{
+						newval.Type = ConvertResourceType(tp)
+					}
 				}
 			}
 			doc.Resources[key.(string)] = newval

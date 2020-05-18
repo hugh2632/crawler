@@ -135,3 +135,12 @@ func TestTab_GetAllLinks(t *testing.T) {
 	}
 	t.Log(list)
 }
+
+func TestSimpleGet(t *testing.T) {
+	res, tp, er := SimpleGet("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/css/soutu_new2_6b217a0.css")
+	if er != nil {
+		t.Fatal(er.Error())
+	}
+	t.Log(ConvertResourceType(tp))
+	t.Log(string(res))
+}
