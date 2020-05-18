@@ -245,6 +245,10 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 
 	select {
 	case <-time.After(time.Second * time.Duration(self.LoadTimeOut)):
+		//加载失败
+		if !documentReceived || doc.Ip == "" {
+			return doc, Err_LoadFail
+		}
 		//超时
 		return doc, Err_UrlTimeout
 	case <-done:
