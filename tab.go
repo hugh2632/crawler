@@ -140,7 +140,7 @@ func (self *Tab) Navigate(rawUrl string) (err error) {
 		rawUrl = "http://" + rawUrl
 	}
 	self.DocInfo = DocumentInfo{
-		Resources: make([]Resource, 0),
+		Resources: make(map[string]Resource, 0),
 	}
 	var res sync.Map
 
@@ -268,7 +268,6 @@ func (self *Tab) Navigate(rawUrl string) (err error) {
 		//暂时不选择并行，因为有丢失的问题，当前采用单协程重试机制
 		res.Range(func(key, value interface{}) bool {
 			var newval = Resource{
-				Url: key.(string),
 				Type: value.(resourceMap).Type,
 			}
 			body, er := network.GetResponseBody(value.(resourceMap).requestID).Do(lctx)
@@ -283,7 +282,7 @@ func (self *Tab) Navigate(rawUrl string) (err error) {
 					newval.Value = bs
 				}
 			}
-			self.DocInfo.Resources = append(self.DocInfo.Resources, newval)
+			self.DocInfo.Resources[key.(string)] = newval
 			return true
 		})
 		return nil

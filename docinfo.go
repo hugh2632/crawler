@@ -18,7 +18,7 @@ type DocumentInfo struct {
 	//状态码
 	StatusCode int
 	//可以做筛选
-	Resources []Resource
+	Resources map[string]Resource
 }
 
 type resourceMap struct {
@@ -27,7 +27,6 @@ type resourceMap struct {
 }
 
 type Resource struct {
-	Url       string
 	Type      network.ResourceType
 	Value     []byte
 }

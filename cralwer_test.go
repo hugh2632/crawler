@@ -10,7 +10,7 @@ func TestTab_Navigate(t *testing.T) {
 	//不使用无头模式
 	Crawler_Headless = false
 	//并行数量
-	var num = 20
+	var num = 1
 	var wg sync.WaitGroup
 	wg.Add(num)
 	for i := 0; i < num; i++ {
@@ -43,8 +43,8 @@ func navigate(t *testing.T) {
 	t.Log("响应时间:", tab.DocInfo.ResponseTime)
 	t.Log("加载时间:", tab.DocInfo.LoadTime)
 	t.Log("状态码:", tab.DocInfo.StatusCode)
-	for _, v := range tab.DocInfo.Resources {
-		t.Logf("url:%s, resource长度:%d\n", v.Url, len(v.Value))
+	for k, v := range tab.DocInfo.Resources {
+		t.Logf("url:%s, resource长度:%d\n", k, len(v.Value))
 	}
 
 	t.Log("\n" + string(text))
