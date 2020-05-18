@@ -202,6 +202,7 @@ func (self *Tab) Navigate(rawUrl string) (err error) {
 							self.DocInfo.StatusCode = int(resp.Status)
 							self.DocInfo.Ip = resp.RemoteIPAddress   //网站IP
 							self.DocInfo.Port = int(resp.RemotePort) //网站端口
+							self.DocInfo.RespUrl = resp.URL
 							if resp.Timing != nil {
 								self.DocInfo.DnsTime = int((resp.Timing.DNSEnd - resp.Timing.DNSStart) * 1000)
 								self.DocInfo.ResponseTime = int((resp.Timing.ReceiveHeadersEnd - resp.Timing.SendEnd) * 1000)

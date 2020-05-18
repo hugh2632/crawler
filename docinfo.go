@@ -9,6 +9,8 @@ type DocumentInfo struct {
 	Ip string
 	//服务器端口
 	Port int
+	//响应url
+	RespUrl string
 	//DNS加载时间,毫秒
 	DnsTime int
 	//页面加载时间,毫秒
