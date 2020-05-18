@@ -45,31 +45,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tab.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5363">
-              <caret line="289" column="16" selection-start-line="289" selection-start-column="16" selection-end-line="289" selection-end-column="16" />
+            <state relative-caret-position="281">
+              <caret line="206" column="111" selection-start-line="206" selection-start-column="111" selection-end-line="206" selection-end-column="111" />
               <folding>
                 <element signature="e#17#297#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docinfo.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99">
-              <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simple.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-              <folding>
-                <element signature="e#17#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,8 +108,8 @@
         <option value="$PROJECT_DIR$/pagenation.go" />
         <option value="$PROJECT_DIR$/browser.go" />
         <option value="$PROJECT_DIR$/docinfo.go" />
-        <option value="$PROJECT_DIR$/tab.go" />
         <option value="$PROJECT_DIR$/cralwer_test.go" />
+        <option value="$PROJECT_DIR$/tab.go" />
       </list>
     </option>
   </component>
@@ -298,8 +277,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28180355" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41170096" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18418202" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -338,6 +317,12 @@
           <url>file://$PROJECT_DIR$/tab.go</url>
           <line>246</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/tab.go</url>
+          <line>206</line>
+          <properties />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -561,16 +546,6 @@
     <entry file="file://$PROJECT_DIR$/debug.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/simple.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="e#17#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../pkg/mod/github.com/chromedp/cdproto@v0.0.0-20200424080200-0de008e41fa0/network/events.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -609,17 +584,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/simple.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding>
+            <element signature="e#17#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docinfo.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
+        <state relative-caret-position="-611">
           <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tab.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5363">
-          <caret line="289" column="16" selection-start-line="289" selection-start-column="16" selection-end-line="289" selection-end-column="16" />
+        <state relative-caret-position="281">
+          <caret line="206" column="111" selection-start-line="206" selection-start-column="111" selection-end-line="206" selection-end-column="111" />
           <folding>
             <element signature="e#17#297#0" expanded="true" />
           </folding>

@@ -10,7 +10,7 @@ func TestTab_Navigate(t *testing.T) {
 	//不使用无头模式
 	Crawler_Headless = false
 	//并行数量
-	var num = 30
+	var num = 1
 	var wg sync.WaitGroup
 	wg.Add(num)
 	for i := 0; i < num; i++ {

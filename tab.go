@@ -204,7 +204,7 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 							doc.RespUrl = resp.URL
 							if resp.Timing != nil {
 								doc.DnsTime = int((resp.Timing.DNSEnd - resp.Timing.DNSStart) * 1000)
-								doc.ResponseTime = int((resp.Timing.ReceiveHeadersEnd - resp.Timing.SendEnd) * 1000)
+								doc.ResponseTime = int(resp.Timing.ReceiveHeadersEnd)
 							}
 						} else {
 							res.Store(resp.URL, resourceMap{
