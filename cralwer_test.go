@@ -10,7 +10,7 @@ func TestTab_Navigate(t *testing.T) {
 	//不使用无头模式
 	Crawler_Headless = false
 	//并行数量
-	var num = 1
+	var num = 30
 	var wg sync.WaitGroup
 	wg.Add(num)
 	for i := 0; i < num; i++ {
@@ -30,20 +30,20 @@ func navigate(t *testing.T) {
 	//屏蔽某些资源
 	tab.DisableCrawlResource().BlockImage().BlockFont()
 
-	_ = tab.Navigate("www.baidu.com")
+	doc, _ := tab.Navigate("www.baidu.com")
 
 	text, er := tab.GetDocument()
 	if er != nil {
 		t.Log("获取文档失败", er.Error())
 	}
 
-	t.Log("IP:", tab.DocInfo.Ip)
-	t.Log("端口:", tab.DocInfo.Port)
-	t.Log("dns响应时间", tab.DocInfo.DnsTime)
-	t.Log("响应时间:", tab.DocInfo.ResponseTime)
-	t.Log("加载时间:", tab.DocInfo.LoadTime)
-	t.Log("状态码:", tab.DocInfo.StatusCode)
-	for k, v := range tab.DocInfo.Resources {
+	t.Log("IP:", doc.Ip)
+	t.Log("端口:", doc.Port)
+	t.Log("dns响应时间", doc.DnsTime)
+	t.Log("响应时间:", doc.ResponseTime)
+	t.Log("加载时间:", doc.LoadTime)
+	t.Log("状态码:", doc.StatusCode)
+	for k, v := range doc.Resources {
 		t.Logf("url:%s, resource长度:%d\n", k, len(v.Value))
 	}
 
@@ -65,7 +65,7 @@ func TestPagenation_RunStatic(t *testing.T) {
 	var tab = Instance().NewTab()
 	defer tab.Close()
 	var datalist = make([]Data, 0)
-	_ = tab.Navigate("https://www.freebuf.com/ics-articles")
+	_, _ = tab.Navigate("https://www.freebuf.com/ics-articles")
 	var pagerule = `for (i=1; i< 100; i++){
     var url = 'https://www.freebuf.com/ics-articles/page/' + i ;
 		if(!tab.RunStatic(url)){
@@ -95,7 +95,7 @@ func TestPagenation_RunDynic(t *testing.T) {
 	var tab = Instance().NewTab()
 	defer tab.Close()
 	var datalist = make([]Data, 0)
-	_ = tab.Navigate("http://its.dlut.edu.cn/wlaqy/aqgg.htm")
+	_, _ = tab.Navigate("http://its.dlut.edu.cn/wlaqy/aqgg.htm")
 	var pagerule = `for (i=1; i< 100; i++){
 	if(!tab.RunDynic('$(\'.Next :first\')[0].click()', 3000)){
 		break;
@@ -125,7 +125,7 @@ func TestTab_GetAllLinks(t *testing.T) {
 	defer browser.Close()
 	var tab = browser.NewTab()
 	defer tab.Close()
-	err := tab.Navigate("www.baidu.com")
+	_, err := tab.Navigate("www.baidu.com")
 	if err != nil {
 		t.Fatal(err.Error())
 	}

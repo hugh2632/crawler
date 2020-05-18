@@ -23,7 +23,6 @@ type Tab struct {
 	WaitTime       int  //毫秒
 	AcceptDialog   bool //true表示在js弹出窗中按确认， false表示取消(默认)
 	resourceparams resourceParams
-	DocInfo        DocumentInfo
 }
 
 func (self *Tab) DisableCrawlResource() *resourceParams {
@@ -131,15 +130,15 @@ func (self *Tab) NewPagenation(pagerule string, spdierrule string, data interfac
 }
 
 //跳转页面并获取各种页面信息
-func (self *Tab) Navigate(rawUrl string) (err error) {
+func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 	_, err = url.Parse(rawUrl)
 	if err != nil {
-		return Err_LoadFail
+		return doc, Err_LoadFail
 	}
 	if !strings.HasPrefix(strings.TrimSpace(rawUrl), "http") {
 		rawUrl = "http://" + rawUrl
 	}
-	self.DocInfo = DocumentInfo{
+	doc = DocumentInfo{
 		Resources: make(map[string]Resource, 0),
 	}
 	var res sync.Map
@@ -199,13 +198,13 @@ func (self *Tab) Navigate(rawUrl string) (err error) {
 						var resp = evt.Response
 						if !documentReceived && evt.Type == network.ResourceTypeDocument {
 							documentReceived = true //第一个下载成功的document为未渲染的源码
-							self.DocInfo.StatusCode = int(resp.Status)
-							self.DocInfo.Ip = resp.RemoteIPAddress   //网站IP
-							self.DocInfo.Port = int(resp.RemotePort) //网站端口
-							self.DocInfo.RespUrl = resp.URL
+							doc.StatusCode = int(resp.Status)
+							doc.Ip = resp.RemoteIPAddress   //网站IP
+							doc.Port = int(resp.RemotePort) //网站端口
+							doc.RespUrl = resp.URL
 							if resp.Timing != nil {
-								self.DocInfo.DnsTime = int((resp.Timing.DNSEnd - resp.Timing.DNSStart) * 1000)
-								self.DocInfo.ResponseTime = int((resp.Timing.ReceiveHeadersEnd - resp.Timing.SendEnd) * 1000)
+								doc.DnsTime = int((resp.Timing.DNSEnd - resp.Timing.DNSStart) * 1000)
+								doc.ResponseTime = int((resp.Timing.ReceiveHeadersEnd - resp.Timing.SendEnd) * 1000)
 							}
 						} else {
 							res.Store(resp.URL, resourceMap{
@@ -247,11 +246,11 @@ func (self *Tab) Navigate(rawUrl string) (err error) {
 	select {
 	case <-time.After(time.Second * time.Duration(self.LoadTimeOut)):
 		//超时
-		return Err_UrlTimeout
+		return doc, Err_UrlTimeout
 	case <-done:
 		//加载失败
-		if !documentReceived || self.DocInfo.Ip == "" {
-			return Err_LoadFail
+		if !documentReceived || doc.Ip == "" {
+			return doc, Err_LoadFail
 		}
 		//强制等待时间
 		if self.WaitTime == 0 {
@@ -259,7 +258,7 @@ func (self *Tab) Navigate(rawUrl string) (err error) {
 		}
 		time.Sleep(time.Duration(self.WaitTime) * time.Millisecond)
 		//计算加载时长
-		self.DocInfo.LoadTime = int(time.Since(start).Milliseconds())
+		doc.LoadTime = int(time.Since(start).Milliseconds())
 	}
 
 	//为资源赋值responsebody
@@ -283,12 +282,12 @@ func (self *Tab) Navigate(rawUrl string) (err error) {
 					newval.Value = bs
 				}
 			}
-			self.DocInfo.Resources[key.(string)] = newval
+			doc.Resources[key.(string)] = newval
 			return true
 		})
 		return nil
 	}))
-	return err
+	return doc, err
 }
 
 // 获取当前页面的所有链接
