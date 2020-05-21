@@ -210,6 +210,10 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 								doc.ResponseTime = int(resp.Timing.ReceiveHeadersEnd)
 							}
 						} else {
+							//页面资源类型的舍弃
+							if  strings.HasPrefix(strings.ToLower(strings.TrimSpace(resp.URL)), "data:"){
+								return
+							}
 							val, ok := res.Load(resp.URL)
 							if ok {
 								res.Store(resp.URL, resourceMap{

@@ -32,7 +32,7 @@ func navigate(t *testing.T) {
 	//屏蔽某些资源
 	//tab.DisableCrawlResource().BlockImage().BlockFont()
 
-	doc, er := tab.Navigate("http://www.baidu.com/")
+	doc, er := tab.Navigate("http://www.baidu.com.cn/")
 
 	text, _ := tab.GetDocument()
 	if er != nil {
@@ -46,7 +46,7 @@ func navigate(t *testing.T) {
 	t.Log("加载时间:", doc.LoadTime)
 	t.Log("状态码:", doc.StatusCode)
 	for k, v := range doc.Resources {
-		t.Logf("url:%s, resource长度:%d\n", k, len(v.Value))
+		t.Logf("referer: %s, url:%s, resource长度:%d\n", v.Referer, k, len(v.Value))
 	}
 
 	t.Log("\n" + string(text))
