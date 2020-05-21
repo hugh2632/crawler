@@ -24,11 +24,13 @@ type DocumentInfo struct {
 }
 
 type resourceMap struct {
-	Type      network.ResourceType
+	referUrl	string
+	tp      network.ResourceType
 	requestID network.RequestID
 }
 
 type Resource struct {
+	Referer	string
 	Type  network.ResourceType
 	Value []byte
 }

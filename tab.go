@@ -210,10 +210,19 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 								doc.ResponseTime = int(resp.Timing.ReceiveHeadersEnd)
 							}
 						} else {
-							res.Store(resp.URL, resourceMap{
-								Type:      evt.Type,
-								requestID: evt.RequestID,
-							})
+							val, ok := res.Load(resp.URL)
+							if ok {
+								res.Store(resp.URL, resourceMap{
+									tp:      evt.Type,
+									requestID: evt.RequestID,
+									referUrl: val.(resourceMap).referUrl,
+								})
+							}else{
+								res.Store(resp.URL, resourceMap{
+									tp:      evt.Type,
+									requestID: evt.RequestID,
+								})
+							}
 						}
 					}(event)
 
@@ -224,7 +233,20 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 						lctx := cdp.WithExecutor(self.ctx, nctx.Target)
 						_ = fetch.FailRequest(evt.RequestID, network.ErrorReasonAborted).Do(lctx)
 					}(event)
-
+				case *network.EventRequestWillBeSent:
+					go func(evt *network.EventRequestWillBeSent) {
+						var refer, ok = event.Request.Headers["Referer"]
+						if ok {
+							val, ok := res.Load(evt.Request.URL)
+							if ok {
+								res.Store(evt.Request.URL, resourceMap{
+									referUrl: val.(resourceMap).referUrl,
+								})
+							}else{
+								res.Store(evt.Request.URL, resourceMap{referUrl:refer.(string)})
+							}
+						}
+					}(event)
 				case *page.EventJavascriptDialogOpening:
 					//弹窗自动关闭，不太好用，不能正确匹配确认或者取消
 					go func() {
@@ -273,7 +295,8 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 		//暂时不选择并行，因为有丢失的问题，当前采用单协程重试机制
 		res.Range(func(key, value interface{}) bool {
 			var newval = Resource{
-				Type: value.(resourceMap).Type,
+				Type: value.(resourceMap).tp,
+				Referer: value.(resourceMap).referUrl,
 			}
 			body, er := network.GetResponseBody(value.(resourceMap).requestID).Do(lctx)
 			if er == nil && body != nil && len(body) > 0 {
@@ -285,9 +308,7 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 					log.Println(key.(string), "资源错误: ", er.Error())
 				} else {
 					newval.Value = bs
-					if len(tp) > 0{
-						newval.Type = ConvertResourceType(tp)
-					}
+					newval.Type = ConvertResourceType(tp)
 				}
 			}
 			doc.Resources[key.(string)] = newval

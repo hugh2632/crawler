@@ -7,7 +7,8 @@ import (
 
 //并发测试，此处不适用benchmark测试
 func TestTab_Navigate(t *testing.T) {
-	ClearCache()
+	//ClearCache()
+	Crawler_LoadTimeOut = 60
 	//不使用无头模式
 	Crawler_Headless = false
 	//并行数量
@@ -29,11 +30,11 @@ func navigate(t *testing.T) {
 	defer tab.Close()
 
 	//屏蔽某些资源
-	tab.DisableCrawlResource().BlockImage().BlockFont()
+	//tab.DisableCrawlResource().BlockImage().BlockFont()
 
-	doc, _ := tab.Navigate("www.baidu.com")
+	doc, er := tab.Navigate("http://www.baidu.com/")
 
-	text, er := tab.GetDocument()
+	text, _ := tab.GetDocument()
 	if er != nil {
 		t.Log("获取文档失败", er.Error())
 	}
