@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cralwer_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            <state relative-caret-position="195">
+              <caret line="55" column="18" lean-forward="true" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -36,40 +36,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/browser.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1146">
+            <state relative-caret-position="-954">
               <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tab.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="212" column="34" selection-start-line="212" selection-start-column="34" selection-end-line="212" selection-end-column="34" />
+            <state relative-caret-position="547">
+              <caret line="242" column="95" selection-start-line="242" selection-start-column="95" selection-end-line="242" selection-end-column="95" />
               <folding>
                 <element signature="e#17#297#0" expanded="true" />
                 <element signature="e#5707#5977#0" />
                 <element signature="e#5983#6299#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docinfo.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="32" column="11" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simple.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -110,6 +92,7 @@
       <find>chromedp</find>
       <find>dns</find>
       <find>1.9.1</find>
+      <find>store</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Projects\Golang\pkg\mod\github.com\chromedp\cdproto@v0.0.0-20200116234248-4da64dd111ac</dir>
@@ -134,8 +117,8 @@
         <option value="$PROJECT_DIR$/simple.go" />
         <option value="$PROJECT_DIR$/browser.go" />
         <option value="$PROJECT_DIR$/docinfo.go" />
-        <option value="$PROJECT_DIR$/tab.go" />
         <option value="$PROJECT_DIR$/cralwer_test.go" />
+        <option value="$PROJECT_DIR$/tab.go" />
       </list>
     </option>
   </component>
@@ -263,18 +246,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 16h 24m 25s.xml">
-      <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 16h 31m 49s.xml">
-      <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 16h 34m 46s.xml">
-      <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 16h 36m 10s.xml">
-      <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 16h 43m 00s.xml">
       <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -293,6 +264,18 @@
     <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 18h 48m 03s.xml">
       <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 18h 52m 34s.xml">
+      <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 18h 58m 16s.xml">
+      <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 18h 59m 36s.xml">
+      <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestTab_Navigate_in_github_com_hugh2632_crawler - 2020.05.21 at 19h 01m 52s.xml">
+      <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -302,9 +285,9 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2665222" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2936078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3618635" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2654388" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25568798" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.55362946" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -346,21 +329,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/tab.go</url>
-          <line>256</line>
+          <line>260</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/cralwer_test.go</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/tab.go</url>
-          <line>217</line>
+          <line>253</line>
           <properties />
-          <option name="timeStamp" value="22" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -627,43 +604,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docinfo.go">
+    <entry file="file://$PROJECT_DIR$/cralwer_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        <state relative-caret-position="195">
+          <caret line="55" column="18" lean-forward="true" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/browser.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1146">
+        <state relative-caret-position="-954">
           <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docinfo.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/runtime/asm_amd64.s">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="1357" selection-start-line="1357" selection-end-line="1357" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tab.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="212" column="34" selection-start-line="212" selection-start-column="34" selection-end-line="212" selection-end-column="34" />
+        <state relative-caret-position="547">
+          <caret line="242" column="95" selection-start-line="242" selection-start-column="95" selection-end-line="242" selection-end-column="95" />
           <folding>
             <element signature="e#17#297#0" expanded="true" />
             <element signature="e#5707#5977#0" />
             <element signature="e#5983#6299#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cralwer_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
         </state>
       </provider>
     </entry>

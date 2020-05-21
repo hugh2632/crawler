@@ -239,6 +239,10 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 					}(event)
 				case *network.EventRequestWillBeSent:
 					go func(evt *network.EventRequestWillBeSent) {
+						//页面资源类型的舍弃
+						if  strings.HasPrefix(strings.ToLower(strings.TrimSpace(evt.Request.URL)), "data:"){
+							return
+						}
 						var refer, ok = event.Request.Headers["Referer"]
 						if ok {
 							val, ok := res.Load(evt.Request.URL)
