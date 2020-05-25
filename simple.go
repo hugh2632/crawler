@@ -3,12 +3,21 @@ package crawler
 import (
 	"errors"
 	"github.com/chromedp/cdproto/network"
+	"github.com/hugh2632/pool"
 	"io/ioutil"
 	"net/http"
 	"strings"
 )
 
+var simplepool pool.ConcurrencyPool
+
+func init(){
+	simplepool.Initial(50)
+}
+
 func SimpleGet(url string) (res []byte, contentType string, err error) {
+	simplepool.Wait()
+	defer simplepool.Done()
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil, "", err

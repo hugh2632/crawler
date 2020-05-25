@@ -2,3 +2,4 @@
 [0521/111318.708:ERROR:process_reader_win.cc(151)] SuspendThread: 拒绝访问。 (0x5)
 [0521/111318.708:ERROR:process_reader_win.cc(151)] SuspendThread: 拒绝访问。 (0x5)
 [0521/111318.708:ERROR:exception_snapshot_win.cc(98)] thread ID 12440 not found in process
+[0525/113814.288:ERROR:file_io_win.cc(161)] CreateFile C:\Users\luhk_sh\AppData\Local\Temp\chromedp-runner184168975\Crashpad\settings.dat: 系统找不到指定的文件。 (0x2)
