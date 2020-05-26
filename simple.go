@@ -56,7 +56,7 @@ func ConvertResourceType(contentType string) network.ResourceType {
 }
 
 func IsValidStatus(statuscode int) bool {
-	if statuscode >= 200 && statuscode < 300 {
+	if statuscode == 304 || (statuscode >= 200 && statuscode < 300) {
 		return true
 	}
 	return false
