@@ -179,7 +179,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestTab_Navigate in github.com/hugh2632/crawler">
+  <component name="RunManager" selected="Go Test.TestChrome in github.com/hugh2632/crawler">
+    <configuration name="TestChrome in github.com/hugh2632/crawler" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="newcrawler" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/hugh2632/crawler" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestChrome$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestPagenation_RunDynic in github.com/hugh2632/crawler" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="newcrawler" />
       <working_directory value="$PROJECT_DIR$" />
@@ -213,17 +224,6 @@
       <pattern value="^TestSyncMap$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestTab_GetAllLinks in github.com/hugh2632/crawler" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="newcrawler" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/hugh2632/crawler" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestTab_GetAllLinks$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="newcrawler" />
       <working_directory value="$PROJECT_DIR$" />
@@ -237,11 +237,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestChrome in github.com/hugh2632/crawler" />
         <item itemvalue="Go Test.TestTab_Navigate in github.com/hugh2632/crawler" />
         <item itemvalue="Go Test.TestSimpleGet in github.com/hugh2632/crawler" />
         <item itemvalue="Go Test.TestPagenation_RunDynic in github.com/hugh2632/crawler" />
         <item itemvalue="Go Test.TestSyncMap in github.com/hugh2632/crawler" />
-        <item itemvalue="Go Test.TestTab_GetAllLinks in github.com/hugh2632/crawler" />
       </list>
     </recent_temporary>
   </component>

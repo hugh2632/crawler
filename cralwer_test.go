@@ -146,3 +146,17 @@ func TestSimpleGet(t *testing.T) {
 	t.Log(ConvertResourceType(tp))
 	t.Log(string(res))
 }
+
+
+func TestChrome(t *testing.T) {
+	Crawler_Headless = false
+	for i:=0;i<10;i++{
+		var tab1 = Instance().NewTab()
+		_, _ = tab1.Navigate("http://www.baidu.com")
+		var tab2 = Instance().NewTab()
+		_, _ = tab2.Navigate("http://www.qq.com")
+		Instance().Close()
+	}
+
+
+}
