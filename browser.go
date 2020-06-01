@@ -101,9 +101,13 @@ func newctx() (context.Context, context.CancelFunc) {
 func (self *browser) NewTab() *Tab {
 	self.Wait()
 	var ers = self.ctx.Err()
-	if ers != nil && ers == context.Canceled {
+	if ers != nil {
 		log.Println("浏览器被关闭，强制重开一个")
 		_instace = nil
+		err := ClearCache()
+		if err != nil {
+			log.Println(err.Error())
+		}
 		self = Instance()
 	}
 	taskCtx, cancel := chromedp.NewContext(self.ctx)
