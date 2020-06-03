@@ -1,6 +1,7 @@
 package crawler
 
 import (
+	"github.com/chromedp/chromedp"
 	"sync"
 	"testing"
 )
@@ -149,6 +150,7 @@ func TestSimpleGet(t *testing.T) {
 
 
 func TestChrome(t *testing.T) {
+	var b chromedp.Browser
 	Crawler_Headless = false
 	for i:=0;i<10;i++{
 		var tab1 = Instance().NewTab()

@@ -106,7 +106,7 @@ func (self *browser) NewTab() *Tab {
 		_instace = nil
 		err := ClearCache()
 		if err != nil {
-			log.Println(err.Error())
+			log.Println("清理缓存失败" + err.Error())
 		}
 		self = Instance()
 	}

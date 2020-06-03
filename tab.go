@@ -270,7 +270,7 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 			//network.enable必须在navigate之前
 			errr := chromedp.Run(self.ctx, actions...)
 			if errr != nil {
-				log.Println(errr.Error())
+				log.Println("标签执行任务失败" + errr.Error())
 			}
 			done <- struct{}{}
 		}()
