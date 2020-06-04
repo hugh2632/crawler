@@ -1,7 +1,6 @@
 package crawler
 
 import (
-	"github.com/chromedp/chromedp"
 	"sync"
 	"testing"
 )
@@ -31,9 +30,9 @@ func navigate(t *testing.T) {
 	defer tab.Close()
 
 	//屏蔽某些资源
-	//tab.DisableCrawlResource().BlockImage().BlockFont()
+	tab.DisableCrawlResource().BlockImage().BlockFont()
 
-	doc, er := tab.Navigate("http://www.baidu.com/")
+	doc, er := tab.Navigate("http://www.jd.com/")
 
 	text, _ := tab.GetDocument()
 	if er != nil {
@@ -47,7 +46,7 @@ func navigate(t *testing.T) {
 	t.Log("加载时间:", doc.LoadTime)
 	t.Log("状态码:", doc.StatusCode)
 	for k, v := range doc.Resources {
-		t.Logf("referer: %s, url:%s, resource长度:%d\n", v.Referer, k, len(v.Value))
+		t.Logf("type: %v, referer: %s, url:%s, resource长度:%d\n", v.Type.String(), v.Referer, k, len(v.Value))
 	}
 
 	t.Log("\n" + string(text))
@@ -150,15 +149,15 @@ func TestSimpleGet(t *testing.T) {
 
 
 func TestChrome(t *testing.T) {
-	var b chromedp.Browser
-	Crawler_Headless = false
-	for i:=0;i<10;i++{
-		var tab1 = Instance().NewTab()
-		_, _ = tab1.Navigate("http://www.baidu.com")
-		var tab2 = Instance().NewTab()
-		_, _ = tab2.Navigate("http://www.qq.com")
-		Instance().Close()
-	}
+	//var b chromedp.Browser
+	//Crawler_Headless = false
+	//for i:=0;i<10;i++{
+	//	var tab1 = Instance().NewTab()
+	//	_, _ = tab1.Navigate("http://www.baidu.com")
+	//	var tab2 = Instance().NewTab()
+	//	_, _ = tab2.Navigate("http://www.qq.com")
+	//	Instance().Close()
+	//}
 
 
 }

@@ -239,9 +239,26 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 					}(event)
 				case *network.EventRequestWillBeSent:
 					go func(evt *network.EventRequestWillBeSent) {
-						//页面资源类型的舍弃
-						if  strings.HasPrefix(strings.ToLower(strings.TrimSpace(evt.Request.URL)), "data:"){
+						//页面资源类型,XHR异步数据的舍弃
+						if  strings.HasPrefix(strings.ToLower(strings.TrimSpace(evt.Request.URL)), "data:") || evt.Type == network.ResourceTypeXHR{
 							return
+						}
+						if self.resourceparams.disableResource {
+							if self.resourceparams.blockImage && evt.Type == network.ResourceTypeImage {
+								return
+							}
+							if self.resourceparams.blockJs  && evt.Type == network.ResourceTypeScript  {
+								return
+							}
+							if self.resourceparams.blockCss  && evt.Type == network.ResourceTypeStylesheet {
+								return
+							}
+							if self.resourceparams.blockFont  && evt.Type == network.ResourceTypeFont {
+								return
+							}
+							if self.resourceparams.blockMedia  && evt.Type == network.ResourceTypeMedia {
+								return
+							}
 						}
 						var refer, ok = event.Request.Headers["Referer"]
 						if ok {
