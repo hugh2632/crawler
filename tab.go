@@ -193,8 +193,15 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 			actions = append(actions, fetch.Enable().WithPatterns(blockpatterns))
 		}
 		actions = append(actions, network.Enable(), chromedp.Navigate(rawUrl))
+		var ctxErr error
 		go func() {
 			chromedp.ListenTarget(self.ctx, func(ev interface{}) {
+				//退出则放弃
+				ctxErr = self.ctx.Err()
+				if ctxErr != nil && err == context.Canceled{
+					log.Println("已退出")
+					return
+				}
 				switch event := ev.(type) {
 				case *network.EventResponseReceived:
 					go func(evt *network.EventResponseReceived) {
