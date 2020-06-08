@@ -3,6 +3,7 @@ package crawler
 import (
 	"context"
 	"errors"
+	"github.com/chromedp/cdproto/network"
 	"github.com/chromedp/chromedp"
 	"github.com/hugh2632/pool"
 	"log"
@@ -27,6 +28,8 @@ var Crawler_Capacity int = 10
 
 //指定缓存目录
 var Crawler_CacheDirectory = ""
+
+var Default_ResourceType_Allow = []network.ResourceType{network.ResourceTypeImage, network.ResourceTypeScript, network.ResourceTypeStylesheet, network.ResourceTypeImage, network.ResourceTypeFont}
 
 var Err_UrlTimeout error = errors.New("网站已超时")
 var Err_LoadFail error = errors.New("无效的网站")
