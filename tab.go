@@ -327,13 +327,11 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 		//暂时不选择并行，因为有丢失的问题，当前采用单协程重试机制
 		res.Range(func(key, value interface{}) bool {
 			var tp = value.(resourceMap).tp
-			for _, v:= range Default_ResourceType_Allow {
-				if v == tp{
-					break
-				}
+			if _, ok := Default_ResourceType_Allow[tp]; !ok {
+				return true //不存在则返回并继续遍历
 			}
 			var newval = Resource{
-				Type: value.(resourceMap).tp,
+				Type: tp,
 				Referer: value.(resourceMap).referUrl,
 			}
 			body, er := network.GetResponseBody(value.(resourceMap).requestID).Do(lctx)

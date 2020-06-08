@@ -29,7 +29,7 @@ var Crawler_Capacity int = 10
 //指定缓存目录
 var Crawler_CacheDirectory = ""
 
-var Default_ResourceType_Allow = []network.ResourceType{network.ResourceTypeImage, network.ResourceTypeScript, network.ResourceTypeStylesheet, network.ResourceTypeImage, network.ResourceTypeFont}
+var Default_ResourceType_Allow = map[network.ResourceType]struct{}{network.ResourceTypeImage:struct{}{}, network.ResourceTypeScript:struct{}{}, network.ResourceTypeStylesheet:struct{}{}, network.ResourceTypeFont:struct{}{}}
 
 var Err_UrlTimeout error = errors.New("网站已超时")
 var Err_LoadFail error = errors.New("无效的网站")
