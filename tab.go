@@ -227,11 +227,13 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 									tp:      evt.Type,
 									requestID: evt.RequestID,
 									referUrl: val.(resourceMap).referUrl,
+									statuscode: int(evt.Response.Status),
 								})
 							}else{
 								res.Store(resp.URL, resourceMap{
 									tp:      evt.Type,
 									requestID: evt.RequestID,
+									statuscode: int(evt.Response.Status),
 								})
 							}
 						}
@@ -332,6 +334,8 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 			}
 			var newval = Resource{
 				Type: tp,
+				Url: key.(string),
+				StatusCode: value.(resourceMap).statuscode,
 				Referer: value.(resourceMap).referUrl,
 			}
 			body, er := network.GetResponseBody(value.(resourceMap).requestID).Do(lctx)

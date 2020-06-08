@@ -27,10 +27,13 @@ type resourceMap struct {
 	referUrl	string
 	tp      network.ResourceType
 	requestID network.RequestID
+	statuscode int
 }
 
 type Resource struct {
 	Referer	string
+	Url string
+	StatusCode int
 	Type  network.ResourceType
 	Value []byte
 }

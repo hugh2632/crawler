@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tab.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="340" column="13" selection-start-line="340" selection-start-column="13" selection-end-line="340" selection-end-column="13" />
+            <state relative-caret-position="275">
+              <caret line="336" column="16" selection-start-line="336" selection-start-column="16" selection-end-line="336" selection-end-column="16" />
               <folding>
                 <element signature="e#17#297#0" expanded="true" />
               </folding>
@@ -37,19 +37,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/browser.go">
+        <entry file="file://$PROJECT_DIR$/docinfo.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="31" column="163" lean-forward="true" selection-start-line="31" selection-start-column="163" selection-end-line="31" selection-end-column="163" />
+            <state relative-caret-position="187">
+              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../pkg/mod/github.com/chromedp/cdproto@v0.0.0-20200424080200-0de008e41fa0/network/types.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/browser.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="41" column="69" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="69" />
+            <state relative-caret-position="380">
+              <caret line="31" column="186" selection-start-line="31" selection-start-column="186" selection-end-line="31" selection-end-column="186" />
             </state>
           </provider>
         </entry>
@@ -83,7 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>page.</find>
       <find>!= nil</find>
       <find>close</find>
       <find>Cross</find>
@@ -113,6 +112,7 @@
       <find>block</find>
       <find>blockImage</find>
       <find>log.println</find>
+      <find>tp</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Projects\Golang\pkg\mod\github.com\chromedp\cdproto@v0.0.0-20200116234248-4da64dd111ac</dir>
@@ -135,10 +135,10 @@
         <option value="$PROJECT_DIR$/crawler.go" />
         <option value="$PROJECT_DIR$/pagenation.go" />
         <option value="$PROJECT_DIR$/simple.go" />
-        <option value="$PROJECT_DIR$/docinfo.go" />
         <option value="$PROJECT_DIR$/cralwer_test.go" />
-        <option value="$PROJECT_DIR$/tab.go" />
         <option value="$PROJECT_DIR$/browser.go" />
+        <option value="$PROJECT_DIR$/docinfo.go" />
+        <option value="$PROJECT_DIR$/tab.go" />
       </list>
     </option>
   </component>
@@ -301,11 +301,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12846482" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12846482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2654388" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.2654388" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.44203684" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.55362946" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -314,7 +314,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33261105" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33261105" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -655,23 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docinfo.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="47" column="19" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tab.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="340" column="13" selection-start-line="340" selection-start-column="13" selection-end-line="340" selection-end-column="13" />
-          <folding>
-            <element signature="e#17#297#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../pkg/mod/github.com/chromedp/chromedp@v0.5.3/allocate.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1482">
@@ -686,17 +669,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/browser.go">
+    <entry file="file://$PROJECT_DIR$/../pkg/mod/github.com/chromedp/cdproto@v0.0.0-20200424080200-0de008e41fa0/network/types.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="31" column="163" lean-forward="true" selection-start-line="31" selection-start-column="163" selection-end-line="31" selection-end-column="163" />
+        <state relative-caret-position="195">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../pkg/mod/github.com/chromedp/cdproto@v0.0.0-20200424080200-0de008e41fa0/network/types.go">
+    <entry file="file://$PROJECT_DIR$/browser.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="41" column="69" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="69" />
+        <state relative-caret-position="380">
+          <caret line="31" column="186" selection-start-line="31" selection-start-column="186" selection-end-line="31" selection-end-column="186" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docinfo.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tab.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="336" column="16" selection-start-line="336" selection-start-column="16" selection-end-line="336" selection-end-column="16" />
+          <folding>
+            <element signature="e#17#297#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
