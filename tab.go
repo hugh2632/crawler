@@ -326,6 +326,11 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 	err = chromedp.Run(lctx, chromedp.ActionFunc(func(ctx context.Context) error {
 		//暂时不选择并行，因为有丢失的问题，当前采用单协程重试机制
 		res.Range(func(key, value interface{}) bool {
+			var tp = value.(resourceMap).tp
+			if tp == network.ResourceTypeDocument {
+				//该类型一般在页面上已经呈现，不需要再单独保存
+				return true
+			}
 			var newval = Resource{
 				Type: value.(resourceMap).tp,
 				Referer: value.(resourceMap).referUrl,
