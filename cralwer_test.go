@@ -26,11 +26,12 @@ func TestTab_Navigate(t *testing.T) {
 }
 
 func navigate(t *testing.T) {
+	Crawler_LoadTimeOut = 2
 	var tab = Instance().NewTab()
 	defer tab.Close()
 
 	//屏蔽某些资源
-	tab.DisableCrawlResource().BlockImage().BlockFont()
+	//tab.DisableCrawlResource().BlockImage().BlockFont()
 
 	doc, er := tab.Navigate("http://www.jd.com/")
 
@@ -139,7 +140,7 @@ func TestTab_GetAllLinks(t *testing.T) {
 }
 
 func TestSimpleGet(t *testing.T) {
-	res, tp, er := SimpleGet("http://www.siwimes.com/hydra_ui/assets/font/fontawesome-webfont.ttf?v=3.2.1")
+	res, tp, _, er := SimpleGet("http://www.siwimes.com/hydra_ui/assets/font/fontawesome-webfont.ttf?v=3.2.1")
 	if er != nil {
 		t.Fatal(er.Error())
 	}
