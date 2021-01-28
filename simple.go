@@ -7,12 +7,14 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
+	"time"
 )
 
 var simplepool pool.ConcurrencyPool
 
 func init(){
 	simplepool.Initial(50)
+	http.DefaultClient.Timeout = 10 * time.Second
 }
 
 func SimpleGet(url string) (res []byte, contentType string, statuscode int, err error) {
