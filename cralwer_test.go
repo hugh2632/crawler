@@ -22,18 +22,19 @@ func TestTab_Navigate(t *testing.T) {
 		}()
 	}
 	wg.Wait()
-	Instance().Close()
+	//Instance().Close()
 }
 
 func navigate(t *testing.T) {
-	Crawler_LoadTimeOut = 2
+	Crawler_Headless = false
+	Crawler_LoadTimeOut = 30
 	var tab = Instance().NewTab()
 	defer tab.Close()
 
 	//屏蔽某些资源
 	//tab.DisableCrawlResource().BlockImage().BlockFont()
 
-	doc, er := tab.Navigate("http://www.jd.com/")
+	doc, er := tab.Navigate("https://www.qdcto.com/editor/md/editor.html")
 
 	text, _ := tab.GetDocument()
 	if er != nil {
@@ -140,7 +141,8 @@ func TestTab_GetAllLinks(t *testing.T) {
 }
 
 func TestSimpleGet(t *testing.T) {
-	res, tp, _, er := SimpleGet("http://www.siwimes.com/hydra_ui/assets/font/fontawesome-webfont.ttf?v=3.2.1")
+	//res, tp, _, er := SimpleGet("http://www.siwimes.com/hydra_ui/assets/font/fontawesome-webfont.ttf?v=3.2.1")
+	res, tp, _, er := SimpleGet("http://www.baidu.com")
 	if er != nil {
 		t.Fatal(er.Error())
 	}

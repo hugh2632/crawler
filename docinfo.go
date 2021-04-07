@@ -19,6 +19,8 @@ type DocumentInfo struct {
 	ResponseTime int
 	//状态码
 	StatusCode int
+	//资源类型
+	ResourceType	network.ResourceType
 	//可以做筛选
 	Resources map[string]Resource
 }

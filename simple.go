@@ -11,16 +11,19 @@ import (
 )
 
 var simplepool pool.ConcurrencyPool
+var client = &http.Client{}
 
 func init(){
 	simplepool.Initial(50)
-	http.DefaultClient.Timeout = 10 * time.Second
+	client.Timeout = 10 * time.Second
 }
 
 func SimpleGet(url string) (res []byte, contentType string, statuscode int, err error) {
 	simplepool.Wait()
 	defer simplepool.Done()
-	resp, err := http.Get(url)
+	req ,_:=http.NewRequest("GET",url,nil)
+	req.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36")
+	resp, err := client.Do(req)
 	if err != nil {
 		return nil, "", 0,  err
 	}

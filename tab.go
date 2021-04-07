@@ -212,6 +212,7 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 							doc.Ip = resp.RemoteIPAddress   //网站IP
 							doc.Port = int(resp.RemotePort) //网站端口
 							doc.RespUrl = resp.URL
+							doc.ResourceType = evt.Type
 							if resp.Timing != nil {
 								doc.DnsTime = int(resp.Timing.DNSEnd - resp.Timing.DNSStart)
 								doc.ResponseTime = int(resp.Timing.ReceiveHeadersEnd)
@@ -366,6 +367,7 @@ func (self *Tab) GetAllLinks() ([]string, error) {
 	err := self.Evaluate(`
 			var ls = [];
 			for(i=0;i<document.links.length;i++){
+				if(
 				ls.push(document.links[i].href);
 			}
 			ls;
