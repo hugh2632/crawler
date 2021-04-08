@@ -367,7 +367,6 @@ func (self *Tab) GetAllLinks() ([]string, error) {
 	err := self.Evaluate(`
 			var ls = [];
 			for(i=0;i<document.links.length;i++){
-				if(
 				ls.push(document.links[i].href);
 			}
 			ls;

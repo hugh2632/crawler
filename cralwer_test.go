@@ -34,7 +34,7 @@ func navigate(t *testing.T) {
 	//屏蔽某些资源
 	//tab.DisableCrawlResource().BlockImage().BlockFont()
 
-	doc, er := tab.Navigate("https://www.qdcto.com/editor/md/editor.html")
+	doc, er := tab.Navigate("https://www.freebuf.com/")
 
 	text, _ := tab.GetDocument()
 	if er != nil {
@@ -50,7 +50,10 @@ func navigate(t *testing.T) {
 	for k, v := range doc.Resources {
 		t.Logf("type: %v, referer: %s, url:%s, resource长度:%d\n", v.Type.String(), v.Referer, k, len(v.Value))
 	}
-
+	links, _ := tab.GetAllLinks()
+	for _, v := range links{
+		t.Log("链接：", v)
+	}
 	t.Log("\n" + string(text))
 }
 

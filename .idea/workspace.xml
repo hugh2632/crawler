@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8bab2f18-a783-4212-9e31-36a6bf5c37fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docinfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/docinfo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cralwer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cralwer_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tab.go" beforeDir="false" afterPath="$PROJECT_DIR$/tab.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pool" />
     <property name="settings.editor.selected.configurable" value="goland.project.structure" />
   </component>
-  <component name="RunManager" selected="Go Test.TestTab_Navigate in github.com/hugh2632/crawler">
+  <component name="RunManager" selected="Go Test.TestTab_Navigate in github.com/hugh2632/crawler (1)">
     <configuration name="TestSimpleGet in github.com/hugh2632/crawler (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="newcrawler" />
       <working_directory value="$PROJECT_DIR$" />
@@ -56,17 +57,6 @@
       <pattern value="^TestSimpleGet$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSimpleGet in github.com/hugh2632/crawler" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="newcrawler" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/hugh2632/crawler" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSimpleGet$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestTab_GetAllLinks in github.com/hugh2632/crawler" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="newcrawler" />
       <working_directory value="$PROJECT_DIR$" />
@@ -76,6 +66,17 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestTab_GetAllLinks$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestTab_Navigate in github.com/hugh2632/crawler (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="newcrawler" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/hugh2632/crawler" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestTab_Navigate$" />
       <method v="2" />
     </configuration>
     <configuration name="TestTab_Navigate in github.com/hugh2632/crawler" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -91,11 +92,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestTab_Navigate in github.com/hugh2632/crawler (1)" />
         <item itemvalue="Go Test.TestTab_Navigate in github.com/hugh2632/crawler" />
         <item itemvalue="Go Test.TestTab_GetAllLinks in github.com/hugh2632/crawler" />
         <item itemvalue="Go Test.TestSimpleGet in github.com/hugh2632/crawler (2)" />
         <item itemvalue="Go Test.TestSimpleGet in github.com/hugh2632/crawler (1)" />
-        <item itemvalue="Go Test.TestSimpleGet in github.com/hugh2632/crawler" />
       </list>
     </recent_temporary>
   </component>
@@ -117,38 +118,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617675188496" />
-    <state width="1877" height="228" key="GridCell.Tab.0.bottom" timestamp="1617781856848">
+    <state width="1877" height="191" key="GridCell.Tab.0.bottom" timestamp="1617864408868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="228" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617781856848" />
-    <state width="1877" height="228" key="GridCell.Tab.0.center" timestamp="1617781856847">
+    <state width="1877" height="191" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617864408868" />
+    <state width="1877" height="191" key="GridCell.Tab.0.center" timestamp="1617864408868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="228" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617781856847" />
-    <state width="1877" height="228" key="GridCell.Tab.0.left" timestamp="1617781856847">
+    <state width="1877" height="191" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617864408868" />
+    <state width="1877" height="191" key="GridCell.Tab.0.left" timestamp="1617864408868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="228" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617781856847" />
-    <state width="1877" height="228" key="GridCell.Tab.0.right" timestamp="1617781856848">
+    <state width="1877" height="191" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617864408868" />
+    <state width="1877" height="191" key="GridCell.Tab.0.right" timestamp="1617864408868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="228" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617781856848" />
-    <state width="1877" height="215" key="GridCell.Tab.1.bottom" timestamp="1617676953019">
+    <state width="1877" height="191" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617864408868" />
+    <state width="1877" height="191" key="GridCell.Tab.1.bottom" timestamp="1617864439264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="215" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617676953019" />
-    <state width="1877" height="215" key="GridCell.Tab.1.center" timestamp="1617676953018">
+    <state width="1877" height="191" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617864439264" />
+    <state width="1877" height="191" key="GridCell.Tab.1.center" timestamp="1617864439264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="215" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617676953018" />
-    <state width="1877" height="215" key="GridCell.Tab.1.left" timestamp="1617676953018">
+    <state width="1877" height="191" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617864439264" />
+    <state width="1877" height="191" key="GridCell.Tab.1.left" timestamp="1617864439264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="215" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617676953018" />
-    <state width="1877" height="215" key="GridCell.Tab.1.right" timestamp="1617676953019">
+    <state width="1877" height="191" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617864439264" />
+    <state width="1877" height="191" key="GridCell.Tab.1.right" timestamp="1617864439264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="215" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617676953019" />
+    <state width="1877" height="191" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617864439264" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1611799253102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -163,13 +164,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/cralwer_test.go</url>
-          <line>143</line>
+          <line>146</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/browser.go</url>
-          <line>104</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/simple.go</url>
+          <line>21</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cralwer_test.go</url>
+          <line>53</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
