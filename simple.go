@@ -41,7 +41,7 @@ func SimpleGet(url string) (res []byte, contentType string, statuscode int, err 
 			return res, strings.Join(content, ";"), resp.StatusCode,nil
 		}
 	}
-	return nil, "", resp.StatusCode, Err_InValidResponse
+	return nil, "", resp.StatusCode, ERR_INVALID_RESPONSE
 }
 
 func ConvertResourceType(contentType string) network.ResourceType {

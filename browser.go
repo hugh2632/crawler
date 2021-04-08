@@ -31,9 +31,10 @@ var Crawler_CacheDirectory = ""
 
 var Default_ResourceType_Allow = map[network.ResourceType]struct{}{network.ResourceTypeImage:struct{}{}, network.ResourceTypeScript:struct{}{}, network.ResourceTypeStylesheet:struct{}{}, network.ResourceTypeFont:struct{}{}}
 
-var Err_UrlTimeout error = errors.New("网站已超时")
-var Err_LoadFail error = errors.New("无效的网站")
-var Err_InValidResponse error = errors.New("无效的响应")
+var ERR_INVALID_URL error = errors.New("无效的网站")
+var ERR_URL_TIMEOUT error = errors.New("网站已超时")
+var ERR_URL_LOAD_FAIL error = errors.New("网站加载失败")
+var ERR_INVALID_RESPONSE error = errors.New("无效的响应")
 
 //单例对象
 var _instace *browser

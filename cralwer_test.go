@@ -34,7 +34,7 @@ func navigate(t *testing.T) {
 	//屏蔽某些资源
 	//tab.DisableCrawlResource().BlockImage().BlockFont()
 
-	doc, er := tab.Navigate("https://www.freebuf.com/")
+	doc, er := tab.Navigate("www.wdj21.com")
 
 	text, _ := tab.GetDocument()
 	if er != nil {

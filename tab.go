@@ -100,7 +100,7 @@ func (self *Tab) GetDocument() (res []byte, err error) {
 func (self *Tab) NavigateEvaluate(rawUrl string, rule string, v interface{}) (err error) {
 	_, err = url.Parse(rawUrl)
 	if err != nil {
-		return Err_LoadFail
+		return ERR_INVALID_URL
 	}
 	if !strings.HasPrefix(strings.TrimSpace(rawUrl), "http") {
 		rawUrl = "http://" + rawUrl
@@ -133,7 +133,7 @@ func (self *Tab) NewPagenation(pagerule string, spdierrule string, data interfac
 func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 	_, err = url.Parse(rawUrl)
 	if err != nil {
-		return doc, Err_LoadFail
+		return doc, ERR_INVALID_URL
 	}
 	if !strings.HasPrefix(strings.TrimSpace(rawUrl), "http") {
 		rawUrl = "http://" + rawUrl
@@ -307,14 +307,14 @@ func (self *Tab) Navigate(rawUrl string) (doc DocumentInfo, err error) {
 	case <-time.After(time.Second * time.Duration(self.LoadTimeOut)):
 		//加载失败
 		if !documentReceived || doc.Ip == "" {
-			return doc, Err_LoadFail
+			return doc, ERR_URL_LOAD_FAIL
 		}
 		//超时
-		return doc, Err_UrlTimeout
+		return doc, ERR_URL_TIMEOUT
 	case <-done:
 		//加载失败
 		if !documentReceived || doc.Ip == "" {
-			return doc, Err_LoadFail
+			return doc, ERR_URL_LOAD_FAIL
 		}
 		//强制等待时间
 		if self.WaitTime == 0 {
