@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"github.com/chromedp/cdproto/network"
+	"github.com/chromedp/cdproto/page"
 	"github.com/chromedp/chromedp"
 	"github.com/hugh2632/pool"
 	"log"
@@ -124,6 +125,14 @@ func (self *browser) NewTab() *Tab {
 		<-tab.ctx.Done()
 		self.Done()
 	}()
+	//增加防反爬
+	chromedp.Run(taskCtx, chromedp.ActionFunc(func(cxt context.Context) error {
+		_, err := page.AddScriptToEvaluateOnNewDocument("Object.defineProperty(navigator, 'webdriver', { get: () => false, });").Do(cxt)
+		if err != nil {
+			return err
+		}
+		return nil
+	}))
 	return &tab
 }
 
